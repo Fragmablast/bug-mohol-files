@@ -1,0 +1,63 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep premium background -->
+    <radialGradient id="bg" cx="50%" cy="25%" r="80%">
+      <stop offset="0%" stop-color="#0A1220"/>
+      <stop offset="100%" stop-color="#020308"/>
+    </radialGradient>
+
+    <!-- Signature BugMohol neon gradient -->
+    <radialGradient id="mint" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#00FFCC"/>
+      <stop offset="100%" stop-color="#00C680"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="120" fill="url(#bg)"/>
+
+  <!-- Soft radial aura -->
+  <circle cx="256" cy="256" r="200" fill="#00FFCC" opacity="0.06"/>
+
+  <!-- Main symbol container -->
+  <circle cx="256" cy="256" r="152" fill="#050A12" stroke="#0F1B2C" stroke-width="4"/>
+
+  <!-- Inner subtle depth-ring -->
+  <circle cx="256" cy="256" r="120" fill="none" stroke="#1A2E44" stroke-width="3" opacity="0.9"/>
+
+  <!-- MAIN ICON: BUG + M MONOGRAM -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+
+    <!-- Body capsule -->
+    <rect x="214" y="188" width="84" height="140" rx="44"
+          fill="none" stroke="url(#mint)" stroke-width="12"/>
+
+    <!-- Upper M wing -->
+    <path d="M226 208 L256 250 L286 208"
+          fill="none" stroke="#00FFCC" stroke-width="10"/>
+
+    <!-- Lower M wing -->
+    <path d="M226 242 L256 284 L286 242"
+          fill="none" stroke="#00FFCC" stroke-width="10" opacity="0.92"/>
+
+    <!-- Antennas -->
+    <path d="M234 188 L214 162" stroke="#00FFCC" stroke-width="8"/>
+    <path d="M278 188 L298 162" stroke="#00FFCC" stroke-width="8"/>
+
+    <!-- Side cyber-legs (left) -->
+    <path d="M214 214 H188" stroke="#00FFCC" stroke-width="7" opacity="0.95"/>
+    <path d="M214 248 H184" stroke="#00FFCC" stroke-width="7" opacity="0.7"/>
+    <path d="M214 282 H188" stroke="#00FFCC" stroke-width="7" opacity="0.95"/>
+
+    <!-- Side cyber-legs (right) -->
+    <path d="M298 214 H324" stroke="#00FFCC" stroke-width="7" opacity="0.95"/>
+    <path d="M298 248 H328" stroke="#00FFCC" stroke-width="7" opacity="0.7"/>
+    <path d="M298 282 H324" stroke="#00FFCC" stroke-width="7" opacity="0.95"/>
+
+    <!-- Nodes -->
+    <circle cx="184" cy="248" r="6" fill="#00FFCC"/>
+    <circle cx="328" cy="248" r="6" fill="#00FFCC"/>
+    <circle cx="214" cy="162" r="6" fill="#00FFCC"/>
+    <circle cx="298" cy="162" r="6" fill="#00FFCC"/>
+  </g>
+</svg>
