@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 240" width="800" height="240" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <!-- Gradients: Adjusted for better contrast on white while keeping neon look -->
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00d2ff" /> <!-- Brighter Cyan -->
+      <stop offset="50%" stop-color="#3a7bd5" /> <!-- Mid Blue -->
+      <stop offset="100%" stop-color="#b24592" /> <!-- Deep Magenta -->
+    </linearGradient>
+
+    <!-- Deep Blue to Electric Violet (Visible on White) -->
+    <linearGradient id="textGradientBug" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2F80ED" /> 
+      <stop offset="100%" stop-color="#56CCF2" />
+    </linearGradient>
+
+    <!-- Deep Purple to Pink (Visible on White) -->
+    <linearGradient id="textGradientMohol" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8E2DE2" />
+      <stop offset="100%" stop-color="#4A00E0" />
+    </linearGradient>
+    
+    <linearGradient id="scanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="rgba(255,255,255,0)" />
+        <stop offset="50%" stop-color="rgba(255,255,255,0.8)" />
+        <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+
+    <!-- Filter: Shadow/Outline for contrast on White Backgrounds -->
+    <filter id="contrastShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <style>
+    .bug-group {
+      animation: float 5s ease-in-out infinite;
+      transform-origin: center;
+    }
+    .bug-body {
+      animation: breathe 4s ease-in-out infinite;
+      transform-origin: 120px 120px;
+    }
+    .leg-left {
+      animation: wiggleLeft 3s ease-in-out infinite;
+      transform-origin: 120px 120px;
+    }
+    .leg-right {
+      animation: wiggleRight 3s ease-in-out infinite;
+      transform-origin: 120px 120px;
+    }
+    .logo-text {
+      /* Updated font stack to match the rounded, professional look */
+      font-family: 'Arial Rounded MT Bold', 'Varela Round', 'Nunito', 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif;
+      font-weight: 700; 
+      letter-spacing: 0px;
+      /* Dark stroke ensures readability on white backgrounds */
+      stroke: #1a1a1a;
+      stroke-width: 1.5px;
+      paint-order: stroke fill;
+    }
+    .scan-overlay {
+        animation: scan 3s linear infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+    }
+    @keyframes wiggleLeft {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(2deg); }
+    }
+    @keyframes wiggleRight {
+      0%, 100% { transform: rotate(0deg); }
+      50% { transform: rotate(-2deg); }
+    }
+    @keyframes scan {
+        0% { transform: translateY(60px); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateY(160px); opacity: 0; }
+    }
+  </style>
+
+  <!-- Group: Entire Bug Icon -->
+  <g class="bug-group" transform="translate(40, 0)">
+    
+    <!-- Legs (Behind Body) - Added darker stroke for contrast -->
+    <g fill="none" stroke="#444" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Left Legs -->
+      <g class="leg-left">
+        <path d="M100 90 L 60 70" />
+        <path d="M100 120 L 50 120" />
+        <path d="M100 150 L 60 170" />
+      </g>
+      <!-- Right Legs -->
+      <g class="leg-right">
+        <path d="M140 90 L 180 70" />
+        <path d="M140 120 L 190 120" />
+        <path d="M140 150 L 180 170" />
+      </g>
+    </g>
+
+    <!-- Antennae - Darker outline stroke added via separate path or group if needed, here using color -->
+    <g fill="none" stroke="#00b4db" stroke-width="4" stroke-linecap="round" filter="url(#contrastShadow)">
+        <path d="M110 80 Q 100 50 80 40" class="leg-left" />
+        <path d="M130 80 Q 140 50 160 40" class="leg-right" />
+    </g>
+
+    <!-- Main Body Group -->
+    <g class="bug-body" filter="url(#contrastShadow)">
+      <!-- Head -->
+      <path d="M95 82 L145 82 A 25 25 0 0 1 145 57 A 25 25 0 0 0 95 57 A 25 25 0 0 1 95 82 Z" fill="#222" stroke="#00d2ff" stroke-width="2" />
+      
+      <!-- Abdomen/Shell -->
+      <rect x="85" y="80" width="70" height="90" rx="35" fill="url(#bodyGradient)" stroke="#1a1a1a" stroke-width="1" />
+      
+      <!-- Tech Segmentation Lines on Body -->
+      <g stroke="rgba(255,255,255,0.6)" stroke-width="2">
+        <line x1="120" y1="80" x2="120" y2="170" /> <!-- Vertical spine -->
+        <line x1="85" y1="125" x2="155" y2="125" /> <!-- Horizontal segment -->
+        <!-- Circuit dots -->
+        <circle cx="120" cy="100" r="3" fill="white" stroke="none" />
+        <circle cx="120" cy="150" r="3" fill="white" stroke="none" />
+      </g>
+      
+      <!-- Scanning Effect Overlay -->
+      <rect x="85" y="60" width="70" height="5" fill="url(#scanLine)" class="scan-overlay" opacity="0.9" style="pointer-events: none;" />
+    </g>
+  </g>
+
+  <!-- Text Section -->
+  <g transform="translate(230, 145)">
+    <!-- 'Bug' Text -->
+    <text x="0" y="0" class="logo-text" font-size="80" fill="url(#textGradientBug)" filter="url(#contrastShadow)">
+      Bug
+    </text>
+    <!-- 'Mohol' Text -->
+    <text x="155" y="0" class="logo-text" font-size="80" fill="url(#textGradientMohol)" filter="url(#contrastShadow)">
+      Mohol
+    </text>
+  </g>
+</svg>
